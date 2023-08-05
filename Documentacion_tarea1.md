@@ -1,5 +1,5 @@
-# API de la NASA 
-## APIs de la [NASA](https://api.nasa.gov/?ref=apispublicas.com#CAD) consumidas
+# Tarea 1: API de la NASA 
+##  APIs de la [NASA](https://api.nasa.gov/?ref=apispublicas.com#CAD) consumidas
 - Asteroids NeoWS
 - Mars Rovers Photos
 
@@ -17,7 +17,7 @@ Cada Rover tiene su propio grupo de fotos almacenado en la base de datos, las cu
 Las fotos también se pueden accessar por la fecha Terrestre correspondiente.
 
 ## Extrayendo fotos por fecha Marciana(sol)
-sol se determina por el día de llegada del Rover a Marte siendo el primer día sol=0 y el último el día mas reciente del que se tengan fotografias 
+El dato sol se determina por el día de llegada del Rover a Marte siendo el primer día sol=0 y el último el día mas reciente del que se tengan fotografías 
 - Ejemplo de endpoint con fecha sol=1000 (1001 día 1001 del Rover en Marte): 
 https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
 
@@ -37,13 +37,30 @@ DEMO_KEY es una llave para extraer datos de las APIs con ciertas limitaciones en
 - Fotos totales tomadas por el Rover Curiosity y Opportunity en un día en específico con fecha terreste.
 
 ## Funciones implementadas en la tarea
-### getAsteroids():
-Esta función hace una solicitud a la API Asteroids NeoWs, necesita un rango de fechas terrestres en formato (YYYY-MM-DD) (Año, mes, día).
-El servidor devuelve un Diccionario anidado en el cual el valor asignado a cada llave es del tipo lista, existen diferentes niveles de anidado segun la informacion disponible en el servidor.
-La respuesta del servidor contiene informacion de los asteroides detectados dentro del rango de fechas proporcionado por el usuario.
+### getAsteroids:
+Esta función hace una solicitud a la API Asteroids NeoWs, recibe 2 argumentos(fecha inicial y fecha final) que corresponden a un rango de fechas terrestres en formato (YYYY-MM-DD) (Año, mes, día) en el cual se buscara la cantidad de asteroides cercanos a la Tierra.
+El rango de fechas debe cumplir las siguientes condiciones:
+- Los datos de Asteroides cercanos a la tierra esta disponible desde 1900-01-01 a la fecha actual (2023-08-04)
+- El rango de fechas a escoger debe ser máximo de 5 días
+
+El servidor devuelve un Diccionario anidado en el cual el valor asignado a cada llave es del tipo lista, existen diferentes niveles de anidado segun la información disponible en el servidor.
+La respuesta del servidor contiene la siguiente informacion de los asteroides detectados dentro del rango de fechas proporcionado por el usuario.
 - id del Asteroide
 - Diámetro del Asteroide em KM, Millas, pies
 - Distancia mas cercana a la tierra dentro del rango de fechas dado por el usuario
 - Velocidad del Asteroide entre otros muchos mas.
 
-Dada la gran cantidad de informacion retornada por el servidor en cada solicitud, la función getAsteroids() le muestra al usuario unicamente la cantidad total de asteroides detectados en el rango de fechas proporcionado.
+Dada la gran cantidad de información retornada por el servidor en cada solicitud, la función getAsteroids() le muestra al usuario unicamente la cantidad total de asteroides detectados en el rango de fechas proporcionado.
+
+### getOpportunity:
+Esta función hace una solicitud a la API MARS ROVER PHOTOS, específicamente a la base de datos de la sonda Opportunity y devuelve la cantidad de fotos tomadas por las diferentes camaras instaladas en dicha sonda en un día determinado por el usuario.
+La base de datos contiene información de las fotografías tomadas entre las fechas de 2004-01-26 hasta 2018-06-07
+
+La función recibe como argumento la fecha de un día Terrestre en formato (YYYY-MM-DD) (Año, mes, día) y devuelve la cantidad total de fotos tomadas por las camaras de la sonda Opportunity en la fecha proporcionada por el usuario.
+
+### getCuriosity:
+Esta función hace una solicitud a la API MARS ROVER PHOTOS, específicamente a la base de datos de la sonda Curiosity y devuelve la cantidad de fotos tomadas por las diferentes camaras instaladas en dicha sonda en un día determinado por el usuario.
+La base de datos contiene información de las fotografías tomadas entre las fechas de 2014-10-01 a la fecha actual (2023-08-04)
+
+La función recibe como argumento la fecha de un día Terrestre en formato (YYYY-MM-DD) (Año, mes, día) y devuelve la cantidad total de fotos tomadas por las camaras de la sonda Curiosity en la fecha proporcionada por el usuario.
+
