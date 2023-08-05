@@ -59,8 +59,8 @@ Dada la gran cantidad de información retornada por el servidor en cada solicitu
 Esta función hace una solicitud a la API MARS ROVER PHOTOS, específicamente a la base de datos de la sonda Opportunity y devuelve la cantidad de fotos tomadas por las diferentes camaras instaladas en dicha sonda en un día determinado por el usuario.
 La base de datos contiene información de las fotografías tomadas entre las fechas de 2004-01-26 hasta 2018-06-07
 ### Endppoint
-- https://api.nasa.gov/mars-photos/api/v1/rovers/Opportunity/photos?earth_date=Variable_fecha&api_key=DEMO_KEY
-- Ejemplo: https://api.nasa.gov/mars-photos/api/v1/rovers/Opportunity/photos?earth_date=2021-02-26&api_key=DEMO_KEY
+- https://api.nasa.gov/mars-photos/api/v1/rovers/Opportunity/photos?earth_date=Variable_fecha&api_key=T21hmrUCC7Y5kIsbbI1wZtYvgiJo60mx5QERfPBd
+- Ejemplo: https://api.nasa.gov/mars-photos/api/v1/rovers/Opportunity/photos?earth_date=2021-02-26&api_key=T21hmrUCC7Y5kIsbbI1wZtYvgiJo60mx5QERfPBd
 
 La función recibe como argumento la fecha de un día Terrestre en formato (YYYY-MM-DD) (Año, mes, día) y devuelve la cantidad total de fotos tomadas por las camaras de la sonda Opportunity en la fecha proporcionada por el usuario.
 
@@ -68,8 +68,8 @@ La función recibe como argumento la fecha de un día Terrestre en formato (YYYY
 Esta función hace una solicitud a la API MARS ROVER PHOTOS, específicamente a la base de datos de la sonda Curiosity y devuelve la cantidad de fotos tomadas por las diferentes camaras instaladas en dicha sonda en un día determinado por el usuario.
 La base de datos contiene información de las fotografías tomadas entre las fechas de 2014-10-01 a la fecha actual (2023-08-04)
 ### Endpoint
-- https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=Variable_fecha&api_key=DEMO_KEY
-- Ejemplo: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-02-26&api_key=DEMO_KEY
+- https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=Variable_fecha&api_key=T21hmrUCC7Y5kIsbbI1wZtYvgiJo60mx5QERfPBd
+- Ejemplo: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-02-26&api_key=T21hmrUCC7Y5kIsbbI1wZtYvgiJo60mx5QERfPBd
 
 
 La función recibe como argumento la fecha de un día Terrestre en formato (YYYY-MM-DD) (Año, mes, día) y devuelve la cantidad total de fotos tomadas por las camaras de la sonda Curiosity en la fecha proporcionada por el usuario.
