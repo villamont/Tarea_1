@@ -42,6 +42,9 @@ Esta función hace una solicitud a la API Asteroids NeoWs, recibe 2 argumentos(f
 El rango de fechas debe cumplir las siguientes condiciones:
 - Los datos de Asteroides cercanos a la tierra esta disponible desde 1900-01-01 a la fecha actual (2023-08-04)
 - El rango de fechas a escoger debe ser máximo de 5 días
+### Endpoint
+- https://api.nasa.gov/neo/rest/v1/feed?start_date=variable_star_date&end_date=variabe_end_date&api_key=T21hmrUCC7Y5kIsbbI1wZtYvgiJo60mx5QERfPBd
+- Ejemplo: https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-09&api_key=T21hmrUCC7Y5kIsbbI1wZtYvgiJo60mx5QERfPBd
 
 El servidor devuelve un Diccionario anidado en el cual el valor asignado a cada llave es del tipo lista, existen diferentes niveles de anidado segun la información disponible en el servidor.
 La respuesta del servidor contiene la siguiente informacion de los asteroides detectados dentro del rango de fechas proporcionado por el usuario.
@@ -55,12 +58,19 @@ Dada la gran cantidad de información retornada por el servidor en cada solicitu
 ### getOpportunity:
 Esta función hace una solicitud a la API MARS ROVER PHOTOS, específicamente a la base de datos de la sonda Opportunity y devuelve la cantidad de fotos tomadas por las diferentes camaras instaladas en dicha sonda en un día determinado por el usuario.
 La base de datos contiene información de las fotografías tomadas entre las fechas de 2004-01-26 hasta 2018-06-07
+### Endppoint
+- https://api.nasa.gov/mars-photos/api/v1/rovers/Opportunity/photos?earth_date=Variable_fecha&api_key=DEMO_KEY
+- Ejemplo: https://api.nasa.gov/mars-photos/api/v1/rovers/Opportunity/photos?earth_date=2021-02-26&api_key=DEMO_KEY
 
 La función recibe como argumento la fecha de un día Terrestre en formato (YYYY-MM-DD) (Año, mes, día) y devuelve la cantidad total de fotos tomadas por las camaras de la sonda Opportunity en la fecha proporcionada por el usuario.
 
 ### getCuriosity:
 Esta función hace una solicitud a la API MARS ROVER PHOTOS, específicamente a la base de datos de la sonda Curiosity y devuelve la cantidad de fotos tomadas por las diferentes camaras instaladas en dicha sonda en un día determinado por el usuario.
 La base de datos contiene información de las fotografías tomadas entre las fechas de 2014-10-01 a la fecha actual (2023-08-04)
+### Endpoint
+- https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=Variable_fecha&api_key=DEMO_KEY
+- Ejemplo: https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-02-26&api_key=DEMO_KEY
+
 
 La función recibe como argumento la fecha de un día Terrestre en formato (YYYY-MM-DD) (Año, mes, día) y devuelve la cantidad total de fotos tomadas por las camaras de la sonda Curiosity en la fecha proporcionada por el usuario.
 
